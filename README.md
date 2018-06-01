@@ -12,7 +12,7 @@ unity3d, assetstore, asset, sheet
 - string과 number(float,int)로 다룰 수 있는 타입이 제한됩니다.
 - 외부툴을 사용하기 때문에 개발플로우가 복잡해집니다.
  
-![sheet](sheet.png)
+![sheet](Resources/sheet.png)
  
  위 시트데이터를 처리한다고 하면 개발자는 해당하는 시트의 데이터를 받아와 처리할 클래스를 정의해야 합니다
 ```csharp
@@ -55,12 +55,12 @@ public class CCCSheet : Sheet<Character> { }
 새로운 시트를 생성합니다. 다시말씀드리지만 이건 다음 asset파일과 동일합니다. ingame에서는 따로 코드가 필요하지
 않을 정도로 단순합니다.
 
-![csheet](CharacterSheet.png)
+![csheet](Resources/CharacterSheet.png)
 
 하지만 Sheet를 상속받음으로써 DataSheetEditor에서 식별이 가능합니다. 이제 Window/DataSheetEditor를 선택하여 엽니다.
 새로만든 CharacterSheet를 선택하면 위 asset파일을 다음과 같이 볼 수 있습니다.
 
-![csheet](CharacterSheet2.png)
+![csheet](Resources/CharacterSheet2.png)
 
 여기서 해당하는 값을 편집하면 곧바로 값이 바뀌며 데이터의 추가, 삭제가 쉽습니다.
 
@@ -88,7 +88,7 @@ public class BaseTypeSheet : Sheet<BaseTypeData> { }
 ```
 위 시트는 DataSheetEditor에서 다음과 같이 표시됩니다.
 
-![baseSheet](baseSheet.png)
+![baseSheet](Resources/baseSheet.png)
 
 유니티에서는 다양한 추가 타입이 존재합니다. 대표적으로 Vector3가 있죠.
 관련된 타입을 작성해 봅시다.
@@ -110,17 +110,17 @@ public class BuildinTypeSheet : Sheet<BuildinTypeData> { }
 ```
 
 이 시트는 다음과 같이 표시됩니다.
-![bisheet](biSheet.png)
+![bisheet](Resources/biSheet.png)
 
 ## 정렬
 
  만약 숫자나 문자열등 비교할 수가 있다면 열정렬이 가능합니다. 맨처음 언급한 CCCSheet를 보겠습니다.
 
-![csheet](CharacterSheet2.png)
+![csheet](Resources/CharacterSheet2.png)
 
 여기서 Power부분을 클릭해봅시다.
 
-![sort](sort.gif)
+![sort](Resources/sort.gif)
 
 Power가 Power ▲ 로 바뀌면서 오른차순으로 바뀝니다. 다시 누르면 내림차순으로 정렬됩니다.
 데이터 순서자체는 옆의 idx를 보면 알 수 있듯이 그대로 있습니다.
@@ -150,7 +150,7 @@ public class Character
 
 이렇게 선언하면 시트에서 다음과 같이 표시됩니다.
 
-![propertysheet](psheet.png)
+![propertysheet](Resources/psheet.png)
 
 Result는 Power와 Speed를 단순 곱한 값입니다. 이 값은 수정이 불가능 하지만 필드처럼 정렬이 가능합니다.
 
@@ -179,7 +179,7 @@ public class Character
 ```
  float이나 int 맴버에 대하여 속성을 추가할 수 있습니다. 이렇게 추가하면 다음과 같이 동작합니다.
  
-![color](color.gif)
+![color](Resources/color.gif)
 
 직관적으로 어떻게 동작하는지 알 수 있습니다.
 
@@ -268,7 +268,7 @@ DataSheetEditor에서는 다음과 같이 사용합니다.
 만약 해당하는 아이템이 string필드가 있다면 자동으로 그 값을 표시하여 어떤 아이템을 참조하고 있는지 알려줍니다. 동작은
 다음과 같습니다.
 
-![skill](skillRefer.gif)
+![skill](Resources/skillRefer.gif)
 
 
 ## referSheet의 사용.
