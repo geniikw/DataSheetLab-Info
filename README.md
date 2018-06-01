@@ -1,7 +1,7 @@
 # DataSheetLab-Info
 unity3d, assetstore, asset, sheet
 
-This repository covers bug reports, guide and patchnote from the DataSheetLab registered in the Asset Store.
+This repository covers bug reports, guide and patchnote from the [DataSheetLab](https://www.assetstore.unity3d.com/en/#!/content/118157) registered in the Asset Store.
 
 [PatchNote](PatchNote.md) 
 
