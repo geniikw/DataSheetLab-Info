@@ -30,7 +30,6 @@ public class Character{
 여기서 DataSheetLab을 소개합니다. 사실 이 에셋은 List<CustomClass>를 하나 가진 ScriptableObject를 사용하는 것과 본질적으로는 다르지 않습니다.
 다만 이러한 데이터를 그냥 사용하면 기획자나 다른 사람들이 보기에는 불편하며 어렵습니다. DataSheetLab은 이러한 데이터를
 Sheet를 사용하는 것 처럼 관리하고 편집할 수 있게 도와줍니다.
-
   
 # 사용자가이드
 
@@ -182,16 +181,18 @@ public class Character
  
 ![color](color.gif)
 
-직관적으로 어떻게 동작하는지 알 수 있으길것 같습니다.
+직관적으로 어떻게 동작하는지 알 수 있습니다.
 
 BigCheck와 SmallCheck 모두 각각 다음과 같이 색상을 설정할 수 있습니다.
 
 ```
 //defulat color is Red
-[BigCheck(100, 1, 1, 1)] max, r, g, b 
+[BigCheck(100, 1, 0, 0)] max, r, g, b 
+//if valus is high than 100 set color red.
 
 //default color is Blue
-[SmallCheck(100, 1, 1, 1)] min, r, g, b
+[SmallCheck(100, 0, 0, 1)] min, r, g, b
+//if value < 100 than set color blue.
 ```
 
 
@@ -205,12 +206,14 @@ public class CharacterManager : MonoBehaviour {
   public CCCSheet characterSheet;
   
   public void Start(){
+  ///모든 참조를 하고 싶으면 foreach를 사용합니다.
     foreach(var character in characterSheet){
       Debug.Log(character.name)
     }  
 }
   
 public void CreateCharacter(int idx){
+  ///하나의 아이템을 참조하고 싶으면 인덱서를 사용합니다.
     var c = characterSheet[idx];
 } 
  ```
