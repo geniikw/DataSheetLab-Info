@@ -3,7 +3,7 @@ unity3d, assetstore, asset, sheet
 
 This repository covers bug reports, guide and patchnote from the DataSheetLab registered in the Asset Store.
 
-# 소개
+# Introduce
 In game development, Sheet is a very common data store. With Excel or Google spreadsheets,
 It is easy to grasp the data at a glance and to judge the numerical value. So there are a lot of related sync assets in the asset store
 
