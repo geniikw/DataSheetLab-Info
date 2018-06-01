@@ -7,18 +7,14 @@ unity3d, assetstore, asset, sheet
 데이터를 한눈에 파악할 수 있고 수치를 판단하기 쉽습니다. 그래서 관련 동기화 에셋들이 에셋스토어에는 많으며
 가장 많이 사용되는 것으로 추측됩니다. 
 
-하지만 이 방식에는 몇가지 문제점이 있습니다. 가령 데이터로 이미지가 필요하다고 가정을 해봅니다. Sheet에는
-Assets폴더내의 절대좌표에 대한 문자열이 저장되어 있을 것이고 이 Sheet데이터를 JSON이나 XML형태로 가져와
-리소스를 불러오는 과정이 들어갈 것입니다. 또한 Vector3나 Color에 대한 데이터를 저장한다고 생각하면 또 
-일이 생깁니다. "(1,2,3)" 같은 문자열을 Vector3(X,Y,Z)로 변환할것인가 Color(R,G,B)로 변환할 것이가를 
-사용자가 따로 정해줘야 됩니다. 또 Object의 레퍼런스를 다루기도 어렵습니다.(물론 할 수는 있을 것 같습니다만 여기서는 논외로 하겠습니다.)
-Metrial?, Animator?, Cubemap? Unity3d에는 수많은 직렬화된 오브젝트가 있으며 사용자가 만드는 ScriptableObject들 또한
-있습니다. 이러한 데이터를 처리하는게 기존 엑셀 방식에선 귀찮은 일입니다.
- 만약 다음과 같은 Sheet가 있다고 가정합시다. 
+하지만 이 방식에는 다음과 같은 문제점이 있습니다. 
+
+- string과 number(float,int)로 다룰 수 있는 타입이 제한됩니다.
+- 외부툴을 사용하기 때문에 개발플로우가 복잡해집니다.
  
 ![sheet](sheet.png)
  
- 개발자는 해당하는 시트의 데이터를 받아와 처리할 클래스를 정의해야 합니다
+ 위 시트데이터를 처리한다고 하면 개발자는 해당하는 시트의 데이터를 받아와 처리할 클래스를 정의해야 합니다
 ```csharp
 public class Character{
   public string Name;
@@ -222,5 +218,54 @@ public void CreateCharacter(int idx){
 위와같이 선언한 CharacterManager에서 CCCSheet에 작성한 Sheet를 넣으면 됩니다.
 
 ## ReferSheet
+
+ 이렇게 사용하다 보면 가끔 다른 시트의 아이템을 참조하는게 필요할 때가 있습니다.
+CharacterSheet와 SkillSheet가 있다고 가정합니다. 캐릭터는 다양한 스킬이 있을 수 있고
+SkillSheet의 수많은 아이템들중 2번째 4번째 같은 특정한 아이템들을 참조해야 할 경우가 있습니다. 
+ReferSheet는 DataSheetEditor에서 다른 Sheet의 아이템을 쉽게 참조할 수 있게 도와줍니다.
+
+SkillSheet를 선언할때 다음과 같이 ReferSheet를 선언합니다.
+```csharp
+[Serializable]
+public class SkillData
+{
+    public string Name;
+    public float Factor;
+    public AnimationCurve curve;
+    public Color color;
+}
+
+[CreateAssetMenu]
+public class SkillSheet : Sheet<SkillData> { }
+
+[Serializable]
+public class SkillRefer : ReferSheet<SkillSheet, SkillData> { }
+```
+
+
+참조할 곳에서는 SkillRefer로 필드선언을 하면 됩니다.
+
+```csharp
+public class Character {
+   ...
+   
+   SkillRefer skills;
+
+   ...
+}
+```
+
+DataSheetEditor에서는 다음과 같이 사용합니다.
+
+1. 일단 참조할 Sheet를 선택합니다.
+2. Edit버튼을 누릅니다.
+3. count를 0보다 큰값으로 바꿉니다.
+4. 인덱스를 설정합니다.
+
+만약 해당하는 아이템이 string필드가 있다면 자동으로 그 값을 표시하여 어떤 아이템을 참조하고 있는지 알려줍니다. 동작은
+다음과 같습니다.
+
+![skill](skillRefer.gif)
+
 
 
