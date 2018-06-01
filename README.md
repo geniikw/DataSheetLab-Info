@@ -3,6 +3,8 @@ unity3d, assetstore, asset, sheet
 
 This repository covers bug reports, guide and patchnote from the DataSheetLab registered in the Asset Store.
 
+[PatchNote](PatchNote.md) 
+
 [한글 가이드](document(korean).md)
 
 # Introduce
