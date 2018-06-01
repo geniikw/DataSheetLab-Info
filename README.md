@@ -219,8 +219,8 @@ public void CreateCharacter(int idx){
 
 ## ReferSheet
 
- 이렇게 사용하다 보면 가끔 다른 시트의 아이템을 참조하는게 필요할 때가 있습니다.
-CharacterSheet와 SkillSheet가 있다고 가정합니다. 캐릭터는 다양한 스킬이 있을 수 있고
+ 이렇게 시트중심으로 게임을 만들다보면 다른 시트의 아이템을 참조하고 싶을 때가 있습니다.
+예를들어 CharacterSheet와 SkillSheet가 있다고 가정합니다. 캐릭터는 다양한 스킬이 있을 수 있고
 SkillSheet의 수많은 아이템들중 2번째 4번째 같은 특정한 아이템들을 참조해야 할 경우가 있습니다. 
 ReferSheet는 DataSheetEditor에서 다른 Sheet의 아이템을 쉽게 참조할 수 있게 도와줍니다.
 
@@ -268,4 +268,18 @@ DataSheetEditor에서는 다음과 같이 사용합니다.
 ![skill](skillRefer.gif)
 
 
+## referSheet의 사용.
 
+Sheet를 참조하는 것과 비슷합니다. 
+모든 아이템을 종주하고 싶다면 Foreach를 사용하고 
+하나의 아이템이 필요하면 인덱서를 사용하면 됩니다.
+
+```csharp
+//use foreach reference all item.
+foreach (var skill in sheet[idx].skillSet)
+{
+   ... ///skill is item in skillSheet.
+}
+//if reference single item 
+var sk0 = sheet[idx].skillSet[0];
+```
