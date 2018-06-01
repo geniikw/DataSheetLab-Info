@@ -1,6 +1,6 @@
 # DataSheetLab-Info
 unity3d, assetstore, asset, sheet
-이 저장소는 에셋스토어에 등록된 DataSheetLab의 버그리포트와 패치노트 이용가이드 등을 다룹니다.
+이 저장소는 에셋스토어에 등록된 [DataSheetLab](https://www.assetstore.unity3d.com/en/#!/content/118157) 버그리포트와 패치노트 이용가이드 등을 다룹니다.
 
 # 소개
 게임개발에 있어서 Sheet는 매우 자주 쓰이는 데이터 저장소 입니다. 엑셀이나 구글스프레드시트를 사용하면
