@@ -10,3 +10,10 @@ bugfix of ReferSheet indexer.
 
 ## 1.2
 fix bottleneck. remove viewcount.
+
+## 1.2a
+fix bug with sprite field.
+
+## 1.2b
+fix bug with gameObject field.
+enable enumtype to check multi item.
