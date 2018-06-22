@@ -125,12 +125,14 @@ public enum EMask{
     D = 8,
     E = 16
 }
-```
+
 public enum ESingle{
    A,B,C,D,E
 }
+```
 
 If each item has 1 bit, it will automatically have a cell using enumMask.
+
 ![enum](Resources/enumExample.gif)
 
 ## sort in column
