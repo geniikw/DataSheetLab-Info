@@ -115,6 +115,24 @@ public class BuildinTypeSheet : Sheet<BuildinTypeData> { }
 This sheet will look like this:
 ![bisheet](Resources/biSheet.png)
 
+### Enum
+If you want to declare a multi-checkable enum, you must define an enum as follows
+```csharp
+public enum EMask{
+    A = 1,
+    B = 2,
+    C = 4,
+    D = 8,
+    E = 16
+}
+```
+public enum ESingle{
+   A,B,C,D,E
+}
+
+If each item has 1 bit, it will automatically have a cell using enumMask.
+![enum](Resources/enumExample.gif)
+
 ## sort in column
 
 If the column is a comparable member such as a number or a string, column sort is possible. Let's look at the first mentioned CCCSheet.
