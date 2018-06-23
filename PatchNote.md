@@ -17,3 +17,10 @@ fix bug with sprite field.
 ## 1.2b
 fix bug with gameObject field.
 enable enumtype to check multi item.
+
+## 1.3
+add control to change cell width.
+![cellwidth](Resources/cellwidth.gif)
+
+enum is now drawn as a mask if each item has 1 bit, or as a normal enumpopup.
+![enum](Resources/enumExample.gif)
