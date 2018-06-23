@@ -131,7 +131,7 @@ public enum ESingle{
 }
 ```
 
-If each item has 1 bit, it will automatically have a cell using enumMask.
+If each item has 1 bit, it will automatically drawn using enumMask.
 
 ![enum](Resources/enumExample.gif)
 
