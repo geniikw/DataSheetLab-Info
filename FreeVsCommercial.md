@@ -6,7 +6,7 @@
 type|all type| string, float, int
 sort colume | O | X
 control width | O | X
-
+view property | O | X
 
 # type
 
@@ -40,3 +40,9 @@ AnimationCurve| O | X
 
 ## free
 ![free](Resources/free.png)
+
+# view property
+
+## commercial
+
+## free
