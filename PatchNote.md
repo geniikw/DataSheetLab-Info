@@ -28,6 +28,8 @@ enum is now drawn as a mask if each item has 1 bit, or as a normal enumpopup.
 ## 1.3a
 change header view.
 
+![header](Resources/HeaderChange.png)
+
 bugfix #7
 
 add title icon
