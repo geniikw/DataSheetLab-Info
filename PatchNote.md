@@ -24,3 +24,12 @@ add control to change cell width.
 
 enum is now drawn as a mask if each item has 1 bit, or as a normal enumpopup.
 ![enum](Resources/enumExample.gif)
+
+## 1.3a
+change header view.
+
+bugfix #7
+
+add title icon
+
+set minimum cell size smaller.
