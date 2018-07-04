@@ -43,12 +43,16 @@ DataSheetLab helps you edit and manage these ListData like a Sheet.
 Let's start with the example shown above.
 Here we show you how to use it from the beginning. To create a Sheet for Character above, code as follows:
 ```csharp
+
+// need [Serializable]
 [System.Serializable]
 public class Character {
   public string name;
   public int power;
   public int speed;
 }
+
+// the sheet class name must be same as the file name.
 [CreateAssetMenu]
 public class CCCSheet : Sheet<Character> { }
 ///it same as
